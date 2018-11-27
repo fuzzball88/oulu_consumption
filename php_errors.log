@@ -1,0 +1,4 @@
+[26-Nov-2018 07:59:24 UTC] PHP Fatal error:  Uncaught Error: Class 'Guzzle\Tests\GuzzleTestCase' not found in /home/ubuntu/workspace/test/bootstrap.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ubuntu/workspace/test/bootstrap.php on line 4
