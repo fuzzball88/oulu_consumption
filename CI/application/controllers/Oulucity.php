@@ -13,13 +13,20 @@ class Oulucity extends CI_Controller {
     }
     
     public function index(){
+        /*
         //Read from local file:
         $json = file_get_contents('../CI/assets/json/properties_basic_information.json');
         //Read from URL:
         //$json = file_get_contents('https://api.ouka.fi/v1/properties_consumption_yearly');
         
         $obj['city'] = json_decode($json, true);
-        
+        */
+        $this->load->view('templates/header');
         $this->load->view('oulucity/index',$obj);
+        $this->load->view('templates/footer');
+    }
+    
+    public function estate($id){
+        
     }
 }

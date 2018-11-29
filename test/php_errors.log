@@ -1,2 +1,0 @@
-[26-Nov-2018 07:59:39 UTC] PHP Fatal error:  Class 'Guzzle\Tests\GuzzleTestCase' not found in /home/ubuntu/workspace/test/ckan/ckanTest.php on line 6
-[26-Nov-2018 08:12:25 UTC] PHP Fatal error:  Class 'Guzzle\Tests\GuzzleTestCase' not found in /home/ubuntu/workspace/test/ckan/ckanTest.php on line 6

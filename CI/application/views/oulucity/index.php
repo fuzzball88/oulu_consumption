@@ -2,6 +2,7 @@
 <?php 
     
     foreach ($city as $city_item): ?>
+    <h2><?php echo $city_item['property_name'];?></h2>
     <h3><?php echo $city_item['property_id']; ?></h3>
     <p><?php echo 'Address: ' . $city_item['property_address']; ?><br>
     <?php echo 'Postal code: ' . $city_item['postal_area']; ?><br>

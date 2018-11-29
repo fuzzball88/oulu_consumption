@@ -1,0 +1,4 @@
+Oulu Open data links
+
+https://avoindata.ouka.fi/es_AR/dataset/kiinteistotiedot/resource/0cad54e0-1ddd-452c-95da-981bba0d42bf?view_id=1f131ed7-dfed-4b92-a29a-a3418b42eb86
+https://api.ouka.fi/ohje/index.html#properties_consumption_daily
