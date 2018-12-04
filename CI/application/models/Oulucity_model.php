@@ -16,93 +16,108 @@ class Oulucity_model extends CI_Model
     public function __construct() 
     {
         parent::__construct();
-        $this->load->database('c9');
     }
 
     /**
-    * this function is getting the estate information from JSON
-    * 
-    * @param -
-    * @return array
-    */
-    public function all_estates() 
-    {
-        //Read from local file:
-        $json = file_get_contents('../CI/assets/json/properties_basic_information.json');
-        //Read from URL:
-        //$json = file_get_contents('https://api.ouka.fi/v1/properties_consumption_yearly');
-        
-        $obj['city'] = json_decode($json, true);
-        return $obj;
-    }
-    
-    
-    /**
-    * this function is getting the single estate details
+    * this function is getting all estates if no parameter is given and the single estate details if id is provided
     * 
     * @param string(estate id)
     * @return array
     */
-    public function get_estate($estate_id = NULL) 
+    public function get_estates($id = NULL) 
     {
-        //Read from local file:
-        $json = file_get_contents('../CI/assets/json/properties_basic_information.json');
-        $obj['city'] = json_decode($json, true);
-        $data['estate'] = array_search($estate_id,$obj['city']);
+        if($id != NULL and  $id !="all")
+        {
+        $source = 'https://api.ouka.fi/v1/properties_basic_information?property_id=eq.'.$id;
+        }
+        else
+        {
+        $source = 'https://api.ouka.fi/v1/properties_basic_information';
+        }
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_URL, $source);
+        $result = curl_exec($ch);
+        // Convert to php array
+        $array = json_decode($result, true);
+        curl_close($ch);
+        //return
+        return $array;
     }
     
+    
     /**
-    * this function is reading entered data and adds the new recipe to 
-    * the database. 
+    * this function is reading entered year and return all Oulu city consumption details
+    * from that year. Otherwise it brings all the data.
     * 
-    * @param    string(path of the upload image)
+    * @param    string(year)
     * @return   boolean
     */
-    public function insert_recipe($imagepath = NULL) 
+    public function get_consumption($year = NULL,$id = NULL) 
     {
-        $data = array(
-            'title' => $this->input->post('title'),
-            'category_id' => $this->input->post('category_id'),
-            'ingredients' => $this->input->post('ingredients'),
-            'production_method' => $this->input->post('production_method'),
-            'production_time' => $this->input->post('production_time'),
-            'image_path' => $imagepath
-            );
-        return $this->db->insert('recipe', $data);
+        if($year === NULL and $id === NULL)
+        {
+            $source = 'https://api.ouka.fi/v1/properties_consumption_yearly';
+        }
+        elseif($year != NULL and $id === NULL)
+        {
+            $source = 'https://api.ouka.fi/v1/properties_consumption_yearly?year=eq.'.$year;
+        }
+        elseif($year == NULL and $id != NULL)
+        {
+            $source = 'https://api.ouka.fi/v1/properties_consumption_yearly?property_id=eq.'.$id;
+        }
+        else
+        {
+            $source = 'https://api.ouka.fi/v1/properties_consumption_yearly?property_id=eq.'.$id.'&year=eq.'.$year;
+        }
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_URL, $source);
+        $result = curl_exec($ch);
+        // Convert to php array
+        $array = json_decode($result, true);
+        curl_close($ch);
+        //return
+        return $array;
     }
     
     /**
-    * this function is reading the new entered data and updates the recipe 
-    * to the database. 
+    * this function is reading entered year and return all Oulu city consumption details
+    * from that year. Otherwise it brings all the data.
     * 
-    * @param    id(int  user id), image_path(string path of the upload image)
+    * @param    string(year)
     * @return   boolean
     */
-    public function update_recipe($id = NULL,$image_path = NULL) 
+    public function get_consumption_monthly($year = NULL,$id = NULL) 
     {
-        $data = array(
-            'id' => $this->input->post('id'),
-            'title' => $this->input->post('title'),
-            'ingredients' => $this->input->post('ingredients'),
-            'production_method' => $this->input->post('production_method'),
-            'production_time' => $this->input->post('production_time'),
-            'category_id' => $this->input->post('category_id'),
-            'image_path' => $image_path
-            );
-        
-        $this->db->where('id', $data['id']);
-        $this->db->update('recipe', $data);
-    }
-    
-    /**
-    * this function is deleting the recipe from the database
-    * 
-    * @param int, user id
-    * @return boolean
-    */
-    public function delete_recipe($id) 
-    {
-        $delete = $this->db->delete('recipe',array('id'=>$id));
-        return $delete?true:false;
+        if($year === NULL and $id === NULL)
+        {
+            $source = 'https://api.ouka.fi/v1/properties_consumption_monthly';
+        }
+        elseif($year != NULL and $id === NULL)
+        {
+            $source = 'https://api.ouka.fi/v1/properties_consumption_monthly?year=eq.'.$year;
+        }
+        elseif($year == NULL and $id != NULL)
+        {
+            $source = 'https://api.ouka.fi/v1/properties_consumption_monthly?property_id=eq.'.$id;
+        }
+        else
+        {
+            $source = 'https://api.ouka.fi/v1/properties_consumption_monthly?property_id=eq.'.$id.'&year=eq.'.$year;
+        }
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_URL, $source);
+        $result = curl_exec($ch);
+        // Convert to php array
+        $array = json_decode($result, true);
+        curl_close($ch);
+        //return
+        return $array;
     }
 }
