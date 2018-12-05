@@ -64,7 +64,7 @@ class Oulucity_model extends CI_Model
         {
             $source = 'https://api.ouka.fi/v1/properties_consumption_yearly?year=eq.'.$year;
         }
-        elseif($year == NULL and $id != NULL)
+        elseif($year === NULL and $id != NULL)
         {
             $source = 'https://api.ouka.fi/v1/properties_consumption_yearly?property_id=eq.'.$id;
         }

@@ -18,7 +18,7 @@
             
             </div>
             <div class="col-lg-4 mx-auto">
-                
+                <a href="<?php echo site_url('oulucity/estates/'.$estate_item['property_id']); ?>" class="btn btn-info">Check details</a>
             </div>
             <?php
             endforeach; 

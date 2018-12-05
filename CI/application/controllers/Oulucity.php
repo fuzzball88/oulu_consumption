@@ -78,17 +78,30 @@ class Oulucity extends CI_Controller {
     public function consumption_yearly($year = NULL,$id = NULL)
     {
         $getid = $this->input->post('property_id');
+        $obj['year'] = $year;
+        $obj['id'] = $id;
         if($year != NULL and $id != NULL and $getid === NULL)
         {
             $obj['estate'] = $this->Oulucity_model->get_consumption($year,$id);
+            $this->load->view('templates/header');
+            $this->load->view('oulucity/consumption_yearly',$obj,$year,$id);
+            $this->load->view('templates/footer');
         }
         elseif($year === NULL and $id === NULL and $getid != NULL)
         {
             $obj['estate'] = $this->Oulucity_model->get_consumption(NULL,$id);
+            $this->load->view('templates/header');
+            $this->load->view('oulucity/consumption_yearly',$obj,$year,$id);
+            $this->load->view('templates/footer');
         }
-        $this->load->view('templates/header');
-        $this->load->view('oulucity/consumption_yearly',$obj,$year,$id);
-        $this->load->view('templates/footer');
+        elseif($year === NULL and $id === NULL and $getid === NULL)
+        {
+            $obj['estate'] = $this->Oulucity_model->get_consumption();
+            $this->load->view('templates/header');
+            $this->load->view('oulucity/consumption_yearly',$obj);
+            $this->load->view('templates/footer');
+        }
+        
     }
     
     public function test_consumption_mothly($year = NULL,$id = NULL)
