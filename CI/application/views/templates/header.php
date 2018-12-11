@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                  <a class="nav-link js-scroll-trigger" href="<?php echo site_url() ?>">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="#services">Services</a>
@@ -29,15 +29,34 @@
                 <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                 </li>
+                <li class="nav-item">
+                  <img src="<?php echo base_url() . "/animation/slowAnimation.gif"; ?>" style="width:80px;height:80px;">
+              </li>
               </ul>
             </div>
           </div>
         </nav>
     <!-- Nav Video -->
-        <header class="bg-primary text-white">
-          <div class="container text-center">
-            <h1>Welcome to Oulu estates consumption data</h1>
-            <!-- <p class="lead">Information how much each building use energy</p> -->
-          </div>
-        </header>
+    
+    <header class="bg-primary text-white">
+                <div class="container text-center">
+                  <h1>Welcome to Oulu estates consumption data</h1>
+                  <!-- <p class="lead">Information how much each building use energy</p> -->
+                </div>
+                
+                <div class="container">
+      <div class="row">
+        <div>
+          <video width="320" height="240" autoplay>
+            <source src="<?php echo base_url()?> . /video/project_h264.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    
+    </header>
+    
+    
+    
+    
 

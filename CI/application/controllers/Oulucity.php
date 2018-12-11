@@ -50,29 +50,36 @@ class Oulucity extends CI_Controller {
             $this->load->view('oulucity/all_estates',$obj);
             $this->load->view('templates/footer');
         }
+        elseif($id === NULL and $getid === NULL)
+        {
+            $obj['estate'] = $this->Oulucity_model->get_estates();
+            $this->load->view('templates/header');
+            $this->load->view('oulucity/all_estates',$obj);
+            $this->load->view('templates/footer');
+        }
         elseif($id != NULL and $getid != 'all')
         {
+            //$year='2017';
             $obj['estate'] = $this->Oulucity_model->get_estates($id);
+            $obj['usage'] = $this->Oulucity_model->get_consumption(NULL,$id);
             $this->load->view('templates/header');
             $this->load->view('oulucity/estate',$obj);
+            //$this->load->view('oulucity/test_years',$obj);
+            $this->load->view('oulucity/year_usage',$obj);
             $this->load->view('templates/footer');
         }
         elseif($id === NULL and $getid != 'all')
         {
+            //$year='2017';
             $obj['estate'] = $this->Oulucity_model->get_estates($getid);
+            $obj['usage'] = $this->Oulucity_model->get_consumption(NULL,$getid);
             $this->load->view('templates/header');
             $this->load->view('oulucity/estate',$obj);
+            //$this->load->view('oulucity/test_years',$obj);
+            $this->load->view('oulucity/year_usage',$obj);
             $this->load->view('templates/footer');
         }
-    }
-    
-    public function test_estates($id = NULL)
-    {
-        $obj['estate'] = $this->Oulucity_model->get_estates($id);
-    
-        $this->load->view('templates/header');
-        $this->load->view('oulucity/test_estate',$obj);
-        $this->load->view('templates/footer');
+        
     }
     
     public function consumption_yearly($year = NULL,$id = NULL)
@@ -83,24 +90,26 @@ class Oulucity extends CI_Controller {
         if($year != NULL and $id != NULL and $getid === NULL)
         {
             $obj['estate'] = $this->Oulucity_model->get_consumption($year,$id);
-            $this->load->view('templates/header');
-            $this->load->view('oulucity/consumption_yearly',$obj,$year,$id);
-            $this->load->view('templates/footer');
+        }
+        elseif($year != NULL and $id === NULL and $getid === NULL)
+        {
+            $obj['estate'] = $this->Oulucity_model->get_consumption($year,NULL);
+        }
+        elseif($year === NULL and $id != NULL and $getid === NULL)
+        {
+            $obj['estate'] = $this->Oulucity_model->get_consumption(NULL,$id);
         }
         elseif($year === NULL and $id === NULL and $getid != NULL)
         {
-            $obj['estate'] = $this->Oulucity_model->get_consumption(NULL,$id);
-            $this->load->view('templates/header');
-            $this->load->view('oulucity/consumption_yearly',$obj,$year,$id);
-            $this->load->view('templates/footer');
+            $obj['estate'] = $this->Oulucity_model->get_consumption(NULL,$getid);
         }
         elseif($year === NULL and $id === NULL and $getid === NULL)
         {
             $obj['estate'] = $this->Oulucity_model->get_consumption();
-            $this->load->view('templates/header');
-            $this->load->view('oulucity/consumption_yearly',$obj);
-            $this->load->view('templates/footer');
         }
+        $this->load->view('templates/header');
+        $this->load->view('oulucity/consumption_yearly',$obj);
+        $this->load->view('templates/footer');
         
     }
     

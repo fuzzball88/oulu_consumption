@@ -1,1 +1,7 @@
 [04-Dec-2018 12:34:35 UTC] PHP Fatal error:  Cannot use [] for reading in /home/ubuntu/workspace/CI/application/views/oulucity/consumption_yearly.php on line 29
+[11-Dec-2018 09:38:34 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 98582528 bytes) in /home/ubuntu/workspace/CI/application/views/oulucity/test_years.php on line 116
+[11-Dec-2018 09:38:40 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 98582528 bytes) in /home/ubuntu/workspace/CI/application/views/oulucity/test_years.php on line 116
+[11-Dec-2018 09:38:47 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 98582528 bytes) in /home/ubuntu/workspace/CI/application/views/oulucity/test_years.php on line 116
+[11-Dec-2018 09:41:34 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 98582528 bytes) in /home/ubuntu/workspace/CI/system/core/Exceptions.php on line 271
+[11-Dec-2018 09:41:36 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 98582528 bytes) in /home/ubuntu/workspace/CI/system/core/Exceptions.php on line 271
+[11-Dec-2018 10:20:36 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 98582528 bytes) in /home/ubuntu/workspace/CI/application/views/oulucity/test_years.php on line 101
