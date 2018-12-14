@@ -149,7 +149,7 @@
             //CHARTS BEGIN HERE
             ?>
             <div class="row">
-            <div id="piechart<?php echo $x; ?>" class="col-lg-6 mx-auto" style="">>
+            <div id="piechart<?php echo $x; ?>" class="col-lg-4 mx-auto" style="">>
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
                 <script type="text/javascript">
                     // Load google charts
@@ -174,7 +174,7 @@
                 </script> 
             </div>
                 
-            <div id="watercolumn<?php echo $x; ?>" class="col-lg-6 mx-auto" style="">
+            <div id="watercolumn<?php echo $x; ?>" class="col-lg-4 mx-auto" style="">
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
                 <script type="text/javascript">
                 // Load google charts
@@ -211,7 +211,7 @@
                 </script>
             </div>
             
-        </div>
+
         <?php    
         }
         ?>

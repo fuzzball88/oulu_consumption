@@ -13,5 +13,5 @@
     <?php array_push($usage,array($estate_item['consumption_measure'],$estate_item['consumption'])); ?>
     <?php endforeach;?>
     
-   
+  
     

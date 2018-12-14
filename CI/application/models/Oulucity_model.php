@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * Class of Recipe model
+ * Class of Oulucity model
  * 
  * @author: Tero Pelkonen
  */

@@ -8,11 +8,14 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
         <!-- Custom styles-->
             <link href="../CI/assets/css/scrolling-nav.css" rel="stylesheet">
+            <link rel="stylesheet" href="<?php echo base_url('assets/css/scrolling-nav.css')?>" type="text/css"/>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme"/>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito"/>
         </head>
         <body>
         
-            <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000000;" id="mainNav">
           <div class="container">
             <!--<a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,27 +39,3 @@
             </div>
           </div>
         </nav>
-    <!-- Nav Video -->
-    
-    <header class="bg-primary text-white">
-                <div class="container text-center">
-                  <h1>Welcome to Oulu estates consumption data</h1>
-                  <!-- <p class="lead">Information how much each building use energy</p> -->
-                </div>
-                
-                <div class="container">
-      <div class="row">
-        <div>
-          <video width="320" height="240" autoplay>
-            <source src="<?php echo base_url()?> . /video/project_h264.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-    
-    </header>
-    
-    
-    
-    
-

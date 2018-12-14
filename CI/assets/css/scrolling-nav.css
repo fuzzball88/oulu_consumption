@@ -15,5 +15,40 @@ header {
 }
 
 section {
-  padding: 150px 0;
+  padding: 150px 0px;
+  font-family: 'Nunito', Serif; 
+ 
 }
+
+.nappi2 {
+  background-color: #333333;
+  color: #669999;
+    display: inline-block;
+  padding: 15px 25px;
+  margin-bottom: 50px;
+  margin-top: 75px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.nappi2:hover {
+  background-color: #fdaee8;
+}
+
+.nappi2:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+video {
+  width: 80%;
+  height: auto;
+}
+

@@ -20,6 +20,7 @@ class Oulucity extends CI_Controller {
         
         $obj['estates'] = $this->Oulucity_model->get_estates();
         $this->load->view('templates/header');
+        $this->load->view('templates/header_video'); 
         $this->load->view('oulucity/index',$obj);
         $this->load->view('templates/footer');
         /*
@@ -64,8 +65,8 @@ class Oulucity extends CI_Controller {
             $obj['usage'] = $this->Oulucity_model->get_consumption(NULL,$id);
             $this->load->view('templates/header');
             $this->load->view('oulucity/estate',$obj);
-            //$this->load->view('oulucity/test_years',$obj);
-            $this->load->view('oulucity/year_usage',$obj);
+            $this->load->view('oulucity/test_years2',$obj);
+            //$this->load->view('oulucity/year_usage',$obj);
             $this->load->view('templates/footer');
         }
         elseif($id === NULL and $getid != 'all')
@@ -75,8 +76,8 @@ class Oulucity extends CI_Controller {
             $obj['usage'] = $this->Oulucity_model->get_consumption(NULL,$getid);
             $this->load->view('templates/header');
             $this->load->view('oulucity/estate',$obj);
-            //$this->load->view('oulucity/test_years',$obj);
-            $this->load->view('oulucity/year_usage',$obj);
+            $this->load->view('oulucity/test_years2',$obj);
+            //$this->load->view('oulucity/year_usage',$obj);
             $this->load->view('templates/footer');
         }
         
@@ -113,12 +114,24 @@ class Oulucity extends CI_Controller {
         
     }
     
+    // test here the monthly thing 
     public function test_consumption_mothly($year = NULL,$id = NULL)
     {
         $obj['estate'] = $this->Oulucity_model->get_consumption_monthly($year,$id);
         
         $this->load->view('templates/header');
         $this->load->view('oulucity/test_consumption_monthly',$obj);
+        $this->load->view('templates/footer');
+    }
+    
+    public function district($id = NULL)
+    {
+        //$id = $this->input->post('district');
+        $obj['districtname'] = $id;
+        $obj['estates'] = $this->Oulucity_model->get_estates();
+        
+        $this->load->view('templates/header');
+        $this->load->view('oulucity/district_estates',$obj);
         $this->load->view('templates/footer');
     }
 }

@@ -1,38 +1,58 @@
+<?php
+$district = array();
+foreach ($estates as $estate_item)
+{
+  if(in_array($estate_item['district_name'],$district,TRUE) == FALSE)
+  {
+    array_push($district,$estate_item['district_name']);
+  }
+}
+//print_r($district);
+
+?>
+
+<script>
+  function goToNewPage(dropdownlist)
+  {
+    var url = dropdownlist.options[dropdownlist.selectedIndex].value;
+    if (url != "")
+    {
+    window.open(url,"_self");
+    }
+  }
+</script>
 <!-- Content -->
 <section id="about">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto">
+          <div class="col-lg-4 mx-auto">
+            <img src="<?php echo base_url() . "/animation/slowAnimation.gif"; ?>" style="width:350px;height:auto;">
+          </div>
+          <div class="col-lg-8 mx-auto" style="margin-top: auto">
             <h2>Purpose of this page</h2>
-            <p class="lead">Our web page provides you the consumption details of all buildings in Oulu that are providing open data.</p>
-            <h3>Select a building or show all:</h3>
+            <p class="lead">Our web page provides you the consumption details of all real estates in Oulu that are providing open data.</p>
+            <h3>Select a district:</h3>
             <!-- Form OPEN -->
-            <?php echo validation_errors();
-            echo form_open('oulucity/estates/')
+            <?php 
+            //echo validation_errors();
+            //echo form_open('oulucity/estates/')
             ?>
-            <select class="custom-select custom-select-lg mb-3" name="estate">
-                <option selected value='all'>All buildings</option>
-                <?php
-                foreach ($estates as $estate_item) 
+            
+            <form name="dropdown">
+               <select name="list" accesskey="E">
+               <option selected value="<?php echo site_url('oulucity/index');?>" disabled>Please select district</option>
+               <?php
+               foreach ($district as $estate_item) 
                 {
-                    print "<option value='".$estate_item['property_id']."'>";
-                    print $estate_item['property_name'];
+                    print '<option value="'?><?php echo site_url('oulucity/district/'.$estate_item).'">';
+                    print $estate_item;
                     print "</option>";
                 }
                 ?>
-            </select>
-            
-            
-            <input type="submit" name="submit" class="btn btn-info" value="Check">
+               <select>
+               <input class="btn btn-outline-danger" type=button value="Go" onclick="goToNewPage(document.dropdown.list)">
             </form>
-            <!--
-            <ul>
-              <li>Clickable nav links that smooth scroll to page sections</li>
-              <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-              <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-              <li>Minimal custom CSS so you are free to explore your own unique design options</li>
-            </ul>
-            -->
+            
           </div>
         </div>
       </div>
