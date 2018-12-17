@@ -163,7 +163,8 @@
             <div class="row">   
                 <div class="col-lg-4 mx-auto">
                     <?php printValues($thisyear,$water,$electricity,$heat);?>
-                    <a href="<?php echo site_url('oulucity/consumption_mothly/'.$thisyear.'/'.$year[0]['property_id']); ?>">Months</a>
+                    <a class="nappi1" href="<?php echo site_url('oulucity/consumption_mothly/'.$thisyear.'/'.$year[0]['property_id']); ?>">Monthly details</a>
+                    
                 </div>
             <?php if($heat != NULL or $electricity != NULL){?> 
                 <!--PIECHART -->    

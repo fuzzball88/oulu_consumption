@@ -25,16 +25,16 @@ header {
 section {
   padding: 150px 0px;
   font-family: 'Nunito', Serif; 
- 
 }
 
 .nappi2 {
-  background-color: #333333;
-  color: #669999;
+  background-color: #73787d;
+  color: #dae8f7;
     display: inline-block;
   padding: 15px 25px;
   margin-bottom: 50px;
   margin-top: 75px;
+  font-family: Nunito, Serif;
   font-size: 24px;
   cursor: pointer;
   text-align: center;
@@ -46,13 +46,47 @@ section {
 }
 
 .nappi2:hover {
-  background-color: #fdaee8;
+  background-color: #dae8f7;
 }
 
 .nappi2:active {
-  background-color: #3e8e41;
+  background-color: #0c7ef7;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+.nappi2:link {
+  text-decoration: none; 
+}
+
+.nappi1 {
+  background-color: #73787d;
+  color: #dae8f7;
+    display: inline-block;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  font-family: Nunito, Serif;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.nappi1:hover {
+  background-color: #dae8f7;
+}
+.nappi1:active {
+  background-color: #0c7ef7;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.nappi1:link {
+  text-decoration: none; 
 }
 
 video {
@@ -60,3 +94,38 @@ video {
   height: auto;
 }
 
+.navbar {
+  background-color: #0c7ef7;
+  padding: 20px;
+}
+.nav-link {
+  font-size: 25px;
+  font-family: Nunito, Serif;
+}
+.nav-link:link {
+  color: #ffffff !important;
+}
+.nav-link:hover {
+  color: #dae8f7 !important;
+}
+
+.text-black {
+  background-color: #dae8f7; 
+  font-family: Georgia, Serif;
+}
+
+.lead {
+  font-family: Nunito, Serif;
+}
+
+#footer {
+  background-color: #dae8f7 !important;
+  height: 100px;
+  text-align: center;
+  padding-top: 40px;
+  font-family: Nunito, Serif;
+}
+#about {
+  padding-top: 3%;
+  padding-bottom: 3%;
+}

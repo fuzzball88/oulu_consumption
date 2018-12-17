@@ -139,6 +139,7 @@ class Oulucity extends CI_Controller {
         
         $this->load->view('templates/header');
         $this->load->view('oulucity/district_estates',$obj);
+        //$this->load->view('oulucity/district_estates_test',$obj);
         $this->load->view('templates/footer');
     }
 }

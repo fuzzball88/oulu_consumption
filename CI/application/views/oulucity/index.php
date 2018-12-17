@@ -30,7 +30,13 @@ foreach ($estates as $estate_item)
           </div>
           <div class="col-lg-8 mx-auto" style="margin-top: auto">
             <h2>Purpose of this page</h2>
-            <p class="lead">Our web page provides you the consumption details of all real estates in Oulu that are providing open data.</p>
+            <p class="lead">Our web page provides consumption details of all real estates in Oulu that are providing open data.</p>
+            <p class="lead">You can see details about the following consumption measures based on a yearly and monthly level:</p>
+            <ul class="lead">
+              <li>electricity</li>
+              <li>heat</li>
+              <li>water</li>
+            </ul>
             <h3>Select a district:</h3>
             <!-- Form OPEN -->
             <?php 
@@ -50,7 +56,7 @@ foreach ($estates as $estate_item)
                 }
                 ?>
                <select>
-               <input class="btn btn-outline-danger" type=button value="Go" onclick="goToNewPage(document.dropdown.list)">
+               <input class="btn btn-outline-primary" type=button value="Go" onclick="goToNewPage(document.dropdown.list)">
             </form>
             
           </div>

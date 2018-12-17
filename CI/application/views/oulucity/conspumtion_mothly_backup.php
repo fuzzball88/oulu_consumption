@@ -138,20 +138,15 @@
                 endforeach;
         endforeach;
     }
-    
     /*
     foreach($pertype as $type_item):
         print_r($type_item);
         echo '<br><br>';
         endforeach;
     */
-    
     ?>
             <div class="container-fluid">
-                <?php 
-                if(isset($pertype['Vesi']))
-                { ?>
-                    <div class="row">
+                <div class="row">
                     <div id="columnchart_water" class="col-lg-12 mx-auto" style="">
                          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                               <script type="text/javascript">
@@ -177,7 +172,7 @@
                                                    2]);
                             
                                   var options = {
-                                    title: "Water usage per month: m3",
+                                    title: "Water usage per month",
                                     width: 1400,
                                     height: 400,
                                     bar: {groupWidth: "60%"},
@@ -189,10 +184,7 @@
                               </script>
                     </div>
                 </div>
-                <?php }
-                if(isset($pertype['Lämpö']))
-                { ?>
-                    <div class="row">
+                <div class="row">
                     <div id="columnchart_heat" class="col-lg-12 mx-auto" style="">
                          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                               <script type="text/javascript">
@@ -218,7 +210,7 @@
                                                    2]);
                             
                                   var options = {
-                                    title: "Heat usage per month: kWh",
+                                    title: "Heat usage per month",
                                     width: 1400,
                                     height: 400,
                                     bar: {groupWidth: "60%"},
@@ -230,10 +222,8 @@
                               </script>
                     </div>
                 </div>
-                <?php }
-                if(isset($pertype['Sähkö']))
-                {?>
-                    <div class="row">
+                
+                <div class="row">
                     <div id="columnchart_electricity" class="col-lg-12 mx-auto" style="">
                          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                               <script type="text/javascript">
@@ -254,7 +244,7 @@
                                                    2]);
                             
                                   var options = {
-                                    title: "Electricity usage per month: kWh",
+                                    title: "Electricity usage per month",
                                     width: 1400,
                                     height: 400,
                                     bar: {groupWidth: "60%"},
@@ -266,7 +256,4 @@
                               </script>
                     </div>
                 </div>
-                <?php }
-                
-                ?>
             </div>

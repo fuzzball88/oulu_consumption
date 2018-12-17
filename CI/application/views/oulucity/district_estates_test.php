@@ -11,9 +11,6 @@
     usort($estates,"sortByName");
 
 $limitestates = array();
-//Decodes scandinavian letters to php
-$districtname = urldecode($districtname);
-
 foreach ($estates as $estate_item)
 {
   if($estate_item['district_name'] == $districtname)
@@ -42,13 +39,13 @@ foreach ($estates as $estate_item)
                 <?php echo 'year_renovated: ' . $estate_item['year_renovated']; ?></p>
             
             </div>
-                <div class="col-lg-4 mx-auto">
-                    <a href="<?php echo site_url('oulucity/estates/'.$estate_item['property_id']); ?>" class="nappi2">Check details</a>
-                </div>
-        </div>
+            <div class="col-lg-4 mx-auto">
+                <a href="<?php echo site_url('oulucity/estates/'.$estate_item['property_id']); ?>" class="nappi2">Check details</a>
+            </div>
+            </div>
             <?php
-        endforeach; 
-        ?>
+            endforeach; 
+            ?>
          
         
     </div>
