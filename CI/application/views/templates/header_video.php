@@ -1,4 +1,3 @@
-<!-- video as "big" header-->
 <header class="text-white" style="background-color: #99ccff; font-family: Acme, Serif;">
       <div class="container text-center">
         <h1>Welcome to Oulu's real estates' consumption data</h1>

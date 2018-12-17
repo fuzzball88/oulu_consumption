@@ -1,5 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**
+ * Class of Oulucity controller
+ * 
+ * @author: Tero Pelkonen, Larissa Sepperer
+ */
+
 //ini_set("allow_url_fopen", 1);
 /*
 require "../vendor/autoload.php";
@@ -65,8 +72,8 @@ class Oulucity extends CI_Controller {
             $obj['usage'] = $this->Oulucity_model->get_consumption(NULL,$id);
             $this->load->view('templates/header');
             $this->load->view('oulucity/estate',$obj);
-            $this->load->view('oulucity/test_years2',$obj);
-            //$this->load->view('oulucity/year_usage',$obj);
+            $this->load->view('oulucity/yearly_usage',$obj);
+            //$this->load->view('oulucity/test_all',$obj);
             $this->load->view('templates/footer');
         }
         elseif($id === NULL and $getid != 'all')
@@ -76,8 +83,8 @@ class Oulucity extends CI_Controller {
             $obj['usage'] = $this->Oulucity_model->get_consumption(NULL,$getid);
             $this->load->view('templates/header');
             $this->load->view('oulucity/estate',$obj);
-            $this->load->view('oulucity/test_years2',$obj);
-            //$this->load->view('oulucity/year_usage',$obj);
+            $this->load->view('oulucity/yearly_usage',$obj);
+            //$this->load->view('oulucity/test_all',$obj);
             $this->load->view('templates/footer');
         }
         
@@ -115,12 +122,12 @@ class Oulucity extends CI_Controller {
     }
     
     // test here the monthly thing 
-    public function test_consumption_mothly($year = NULL,$id = NULL)
+    public function consumption_mothly($year = NULL,$id = NULL)
     {
         $obj['estate'] = $this->Oulucity_model->get_consumption_monthly($year,$id);
         
         $this->load->view('templates/header');
-        $this->load->view('oulucity/test_consumption_monthly',$obj);
+        $this->load->view('oulucity/consumption_monthly',$obj);
         $this->load->view('templates/footer');
     }
     
